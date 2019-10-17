@@ -27,9 +27,29 @@ def sms_reply():
         resp.message('LEEEEEGII')
         return str(resp)
 
-    elif keyword == 'Pic':
-        resp.message(media_url='https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg')
+    elif keyword == 'lb':
+        resp.message('''
+        ——————————DIENSTAG————————————
+        29.10 M947 Test w 100% (Unit 1)
+        22.10 WR Test 1 50%
+        10.12 WR Test 2 50%
+        12.11 M926 Test 2
+        17.12 M926 Test 3
+        ——————————MITTWOCH———————————
+        13.11 M157 LB2 50%
+        08-15.01 M157 LB3 35%
+        16.10 M146 LB1 40%
+        08.01 M146 LB2 60%
+        ——————————————————————————
+        ''')
         return str(resp)
+    elif keyword == 'Ferien':
+        resp.message('''
+        Ferien & freie Arbeitstage:
+        23.09.2019 - 12.10.2019 Herbstferien (gibb)
+        Winterferien 23.12.2019 - 04.01.2020
+        ''')
+
     return str(resp)
 
 if __name__ == "__main__":
