@@ -21,9 +21,11 @@ def sms_reply():
         Dein Stuundenplan ist wie folgt:
         https://tipo.webuntis.com/WebUntis/api/public/printpreview/timetable?type=1&id=10667&date=20191016&formatId=1&filter.departmentId=-1
         ''')
+        return str(resp)
 
     elif keyword == 'Dör':
         resp.message('LEEEEEGII')
+        return str(resp)
     return str(resp)
 
 if __name__ == "__main__":
