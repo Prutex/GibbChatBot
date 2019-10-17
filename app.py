@@ -26,6 +26,10 @@ def sms_reply():
     elif keyword == 'Dör':
         resp.message('LEEEEEGII')
         return str(resp)
+
+    elif keyword == 'Pic':
+        resp.message(media_url='https://upload.wikimedia.org/wikipedia/commons/6/66/An_up-close_picture_of_a_curious_male_domestic_shorthair_tabby_cat.jpg')
+        return str(resp)
     return str(resp)
 
 if __name__ == "__main__":
