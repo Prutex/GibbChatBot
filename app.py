@@ -16,6 +16,14 @@ def sms_reply():
     # Create reply
     resp = MessagingResponse()
 
+    if keyword == 'help':
+        resp.message('''
+        Stundenplan
+        Dör
+        lb
+        Ferien
+        ''')
+
     if keyword == 'Stundenplan':
         resp.message('''
         Dein Stundenplan ist wie folgt:
