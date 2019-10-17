@@ -18,7 +18,7 @@ def sms_reply():
 
     if keyword == 'Stundenplan':
         resp.message('''
-        Dein Stuundenplan ist wie folgt:
+        Dein Stundenplan ist wie folgt:
         https://tipo.webuntis.com/WebUntis/api/public/printpreview/timetable?type=1&id=10667&date=20191016&formatId=1&filter.departmentId=-1
         ''')
         return str(resp)
