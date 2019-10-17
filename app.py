@@ -11,21 +11,12 @@ def hello():
 def sms_reply():
     """Respond to incoming calls with a simple text message."""
     # Fetch the message
-    keyword = request.form.get('Body')
+    msg = request.form.get('Body')
 
     # Create reply
     resp = MessagingResponse()
+    resp.message("You said: {}".format(msg))
 
-    if keyword == 'Stundenplan':
-        resp.message('''
-        Dein Stuundenplan ist wie folgt:
-        https://tipo.webuntis.com/WebUntis/api/public/printpreview/timetable?type=1&id=10667&date=20191016&formatId=1&filter.departmentId=-1
-        ''')
-        return str(resp)
-
-    elif keyword == 'Dör':
-        resp.message('LEEEEEGII')
-        return str(resp)
     return str(resp)
 
 if __name__ == "__main__":
