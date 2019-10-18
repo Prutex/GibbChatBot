@@ -1,11 +1,16 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
+from own import prntTest
 
 app = Flask(__name__)
 
 @app.route("/")
 def hello():
     return "Hello, World!"
+
+@app.route("/testing")
+def testing():
+    return 'The Page works' + prntTest()
 
 @app.route("/sms", methods=['POST'])
 def sms_reply():
