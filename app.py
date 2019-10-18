@@ -1,6 +1,6 @@
 from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
-from own import prntTest
+from own import prntTest, imagef
 
 app = Flask(__name__)
 
@@ -10,7 +10,9 @@ def hello():
 
 @app.route("/testing")
 def testing():
-    return 'The Page works' + prntTest()
+    prntTest()
+    imagef('funtion testing', 'works')
+    return 'The Page works'
 
 @app.route("/sms", methods=['POST'])
 def sms_reply():
