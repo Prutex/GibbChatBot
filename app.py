@@ -41,7 +41,7 @@ def sms_reply():
         xtime = txt.split()
         etime = xtime[3].split(':')
 
-        if xtime[0] == 'Mon':
+        if xtime[0] == 'Tue':
             if int(etime[0]) < 10:
                 resp.message('08:45 - 09:30 Englisch(947) – Reist Daniela')
             elif int(etime[0]) < 12:
