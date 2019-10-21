@@ -5,15 +5,18 @@ import time
 
 app = Flask(__name__)
 
+
 @app.route("/")
 def hello():
     return "Hello, World!"
+
 
 @app.route("/testing")
 def testing():
     prntTest()
     imagef('funtion testing', 'works')
     return 'The Page works'
+
 
 @app.route("/sms", methods=['POST'])
 def sms_reply():
@@ -36,26 +39,27 @@ def sms_reply():
 
         txt = time.asctime()
         xtime = txt.split()
-        if xtime[0] == 'Tue':
-            resp.message('''
-                08:45 - 09:30 Englisch(947) – Reist Daniela
-                
-                10:00 - 11:30 Wirtschaft und Recht(915) – Pieren Benno
-                
-                13:30 - 15:00 Naturwiss. Grundlagen(926) – Nydegger Martin
-                
-                15:30 - 17:00 ABU – Gerber Simone
-                    ''')
+        etime = xtime[3].split(':')
+
+        if xtime[0] == 'Mon':
+            if int(etime[0]) < 10:
+                resp.message('08:45 - 09:30 Englisch(947) – Reist Daniela')
+            elif int(etime[0]) < 12:
+                resp.message('10:00 - 11:30 Wirtschaft und Recht(915) – Pieren Benno')
+            elif int(etime[0]) < 15:
+                resp.message('13:30 - 15:00 Naturwiss. Grundlagen(926) – Nydegger Martin')
+            elif int(etime[0]) < 17:
+                resp.message('15:30 - 17:00 ABU – Gerber Simone')
+
         elif xtime[0] == 'Wed':
-            resp.message('''
-                08:00 - 09:30 Hardware(157) – Jäggi Thomas
-                
-                10:00 - 11:30 Internetanbindung(146) – Kratzer Michael
-                
-                12:30 - 14:00 IT-Kleinprojekt(306) – Yilmaz Günel
-                
-                14:15 - 15:45 Teamverhalten(213) – Yilmaz Günel
-                               ''')
+            if int(etime[0]) < 10:
+                resp.message(' 08:00 - 09:30 Hardware(157) – Jäggi Thomas')
+            elif int(etime[0]) < 12:
+                resp.message('10:00 - 11:30 Internetanbindung(146) – Kratzer Michael')
+            elif int(etime[0]) < 14:
+                resp.message('12:30 - 14:00 IT-Kleinprojekt(306) – Yilmaz Günel')
+            elif int(etime[0]) < 17:
+                resp.message('14:15 - 15:45 Teamverhalten(213) – Yilmaz Günel')
         else:
             resp.message('Heute hast du keine Schule')
         return str(resp)
@@ -88,6 +92,7 @@ def sms_reply():
         ''')
 
     return str(resp)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
