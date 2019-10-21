@@ -70,18 +70,18 @@ def sms_reply():
 
     elif keyword == 'lb':
         resp.message('''
-        ——————————DIENSTAG————————————
-        29.10 M947 Test w 100% (Unit 1)
-        22.10 WR Test 1 50%
-        10.12 WR Test 2 50%
-        12.11 M926 Test 2
-        17.12 M926 Test 3
-        ——————————MITTWOCH———————————
-        13.11 M157 LB2 50%
-        08-15.01 M157 LB3 35%
-        16.10 M146 LB1 40%
-        08.01 M146 LB2 60%
-        ——————————————————————————
+ ——————————DIENSTAG————————————
+ 29.10 M947 Test w 100% (Unit 1)
+ 22.10 WR Test 1 50%
+ 10.12 WR Test 2 50%
+ 12.11 M926 Test 2
+ 17.12 M926 Test 3
+ ——————————MITTWOCH———————————
+ 13.11 M157 LB2 50%
+ 08-15.01 M157 LB3 35%
+ 16.10 M146 LB1 40%
+ 08.01 M146 LB2 60%
+ ——————————————————————————
         ''')
         return str(resp)
     elif keyword == 'Ferien':
