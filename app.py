@@ -61,7 +61,7 @@ def sms_reply():
             elif int(etime[0]) < 17:
                 resp.message('14:15 - 15:45 Teamverhalten(213) – Yilmaz Günel')
         else:
-            resp.message('Heute hast du keine Schule')
+            resp.message('Heute hast du keine Schule weil heute ist:' + xtime[0])
         return str(resp)
 
     elif keyword == 'Dör':
