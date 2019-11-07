@@ -2,6 +2,7 @@ from flask import Flask, request
 from twilio.twiml.messaging_response import MessagingResponse
 from own import prntTest, imagef
 import time
+import random
 
 app = Flask(__name__)
 
@@ -67,6 +68,28 @@ def sms_reply():
     elif keyword == 'Dör':
         resp.message('LEEEEEGII')
         return str(resp)
+    elif keyword == 'Schere' or 'Stein' or 'Papier':
+        moves = ['Schere', 'Stein', 'Papier']
+        move = moves[random.randrange(0, 2)]
+        resp.message(move)
+        if keyword == move:
+            resp.message("it's a draw")
+        elif keyword == 'Schere' and move == "Papier":
+            resp.message("You Won!")
+        elif keyword == 'Schere' and move == "Stein":
+            resp.message('Suck it, I Won!')
+        elif keyword == 'Stein' and move == 'Papier':
+            resp.message('Suck it, I won!')
+        elif keyword == 'Stein' and move == 'Schere':
+            resp.message('You Won!')
+        elif keyword == 'Papier' and move == 'Schere':
+            resp.message('Suck it, I won!')
+        elif keyword == 'Papier' and move == 'Stein':
+            resp.message('You won!')
+
+
+
+
 
     elif keyword == 'lb':
         resp.message('''
