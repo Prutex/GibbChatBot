@@ -115,6 +115,9 @@ def sms_reply():
         23.09.2019 - 12.10.2019 Herbstferien (gibb)
         Winterferien 23.12.2019 - 04.01.2020
         ''')
+    elif keyword == 'Version':
+        resp.message('Version0.1.1')
+
     else:
         resp.message("I don't know this Command, you said: " + keyword)
         return str(resp)
