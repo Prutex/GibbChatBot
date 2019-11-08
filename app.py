@@ -30,11 +30,12 @@ def sms_reply():
     resp = MessagingResponse()
 
     if keyword == 'help':
-        resp.message('''
+        resp.message(version + '' + '''
         Stundenplan
         Dör
         lb
         Ferien
+        Roll
         Can Now play Rock, Papers, Scissors(Type your move: "Stein" or "Papier" or "Schere"  
         ''')
         return str(resp)
