@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.1.5'
+version = 'Version 0.1.1.6'
 
 
 @app.route("/")
@@ -76,7 +76,7 @@ def sms_reply():
         moves = ['Schere', 'Stein', 'Papier']
         move = moves[random.randrange(0, 2)]
         resp.message(move)
-
+        time.sleep(1)
         if keyword == move:
             resp.message("it's a draw")
             return str(resp)
