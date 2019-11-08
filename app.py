@@ -5,11 +5,12 @@ import time
 import random
 
 app = Flask(__name__)
+version = 'Version 0.1.1.3'
 
 
 @app.route("/")
 def hello():
-    return "Version 0.1.1.2"
+    return version
 
 
 @app.route("/testing")
@@ -77,18 +78,25 @@ def sms_reply():
         resp.message(move)
         if keyword == move:
             resp.message("it's a draw")
+            return str(resp)
         elif keyword == 'Schere' and move == "Papier":
             resp.message("You Won!")
+            return str(resp)
         elif keyword == 'Schere' and move == "Stein":
             resp.message('Suck it, I Won!')
+            return str(resp)
         elif keyword == 'Stein' and move == 'Papier':
             resp.message('Suck it, I won!')
+            return str(resp)
         elif keyword == 'Stein' and move == 'Schere':
             resp.message('You Won!')
+            return str(resp)
         elif keyword == 'Papier' and move == 'Schere':
             resp.message('Suck it, I won!')
+            return str(resp)
         elif keyword == 'Papier' and move == 'Stein':
             resp.message('You won!')
+            return str(resp)
         return str(resp)
 
 
@@ -117,7 +125,7 @@ def sms_reply():
         Winterferien 23.12.2019 - 04.01.2020
         ''')
     elif keyword == 'Version':
-        resp.message('Version0.1.1.2')
+        resp.message(version)
         return str(resp)
 
     else:
