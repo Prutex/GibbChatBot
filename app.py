@@ -117,6 +117,7 @@ def sms_reply():
         ''')
     elif keyword == 'Version':
         resp.message('Version0.1.1')
+        return str(resp)
 
     else:
         resp.message("I don't know this Command, you said: " + keyword)
