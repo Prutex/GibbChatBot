@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.1.4'
+version = 'Version 0.1.1.5'
 
 
 @app.route("/")
@@ -68,11 +68,11 @@ def sms_reply():
             resp.message('Heute hast du keine Schule weil heute ist:' + xtime[0])
         return str(resp)
 
-    elif keyword == 'Dör':
+    if keyword == 'Dör':
         resp.message('LEEEEEGII')
         return str(resp)
 
-    elif keyword == 'Schere' or keyword == 'Stein' or keyword == 'Papier':
+    if keyword == 'Schere' or keyword == 'Stein' or keyword == 'Papier':
         moves = ['Schere', 'Stein', 'Papier']
         move = moves[random.randrange(0, 2)]
         resp.message(move)
@@ -99,7 +99,7 @@ def sms_reply():
             resp.message('You won!')
             return str(resp)
 
-    elif keyword == 'lb':
+    if keyword == 'lb':
         resp.message('''
          ——————————DIENSTAG————————————
          29.10 M947 Test w 100% (Unit 1)
@@ -116,13 +116,13 @@ def sms_reply():
         ''')
         return str(resp)
 
-    elif keyword == 'Ferien':
+    if keyword == 'Ferien':
         resp.message('''
         Ferien & freie Arbeitstage:
         23.09.2019 - 12.10.2019 Herbstferien (gibb)
         Winterferien 23.12.2019 - 04.01.2020
         ''')
-    elif keyword == 'Version':
+    if keyword == 'Version':
         resp.message(version)
         return str(resp)
 
