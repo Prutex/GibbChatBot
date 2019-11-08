@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.2.0'
+version = 'Version 0.1.2.0.1'
 
 
 @app.route("/")
@@ -131,7 +131,7 @@ def sms_reply():
         ''')
     if keyword == 'Roll':
         resp.message(str(random.randrange(0, 100)))
-        return
+        return str(resp)
     if keyword == 'Version':
         resp.message(version)
         return str(resp)
