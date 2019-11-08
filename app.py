@@ -70,6 +70,7 @@ def sms_reply():
     elif keyword == 'Dör':
         resp.message('LEEEEEGII')
         return str(resp)
+
     elif keyword == 'Schere' or 'Stein' or 'Papier':
         moves = ['Schere', 'Stein', 'Papier']
         move = moves[random.randrange(0, 2)]
@@ -88,25 +89,25 @@ def sms_reply():
             resp.message('Suck it, I won!')
         elif keyword == 'Papier' and move == 'Stein':
             resp.message('You won!')
-
+        return str(resp)
 
 
 
 
     elif keyword == 'lb':
         resp.message('''
- ——————————DIENSTAG————————————
- 29.10 M947 Test w 100% (Unit 1)
- 22.10 WR Test 1 50%
- 10.12 WR Test 2 50%
- 12.11 M926 Test 2
- 17.12 M926 Test 3
- ——————————MITTWOCH———————————
- 13.11 M157 LB2 50%
- 08-15.01 M157 LB3 35%
- 16.10 M146 LB1 40%
- 08.01 M146 LB2 60%
- ——————————————————————————
+         ——————————DIENSTAG————————————
+         29.10 M947 Test w 100% (Unit 1)
+         22.10 WR Test 1 50%
+         10.12 WR Test 2 50%
+         12.11 M926 Test 2
+         17.12 M926 Test 3
+         ——————————MITTWOCH———————————
+         13.11 M157 LB2 50%
+         08-15.01 M157 LB3 35%
+         16.10 M146 LB1 40%
+         08.01 M146 LB2 60%
+         ——————————————————————————
         ''')
         return str(resp)
     elif keyword == 'Ferien':
@@ -116,7 +117,7 @@ def sms_reply():
         Winterferien 23.12.2019 - 04.01.2020
         ''')
     elif keyword == 'Version':
-        resp.message('Version0.1.1')
+        resp.message('Version0.1.1.2')
         return str(resp)
 
     else:
