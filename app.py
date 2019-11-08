@@ -117,6 +117,7 @@ def sms_reply():
         ''')
     else:
         resp.message("I don't know this Command, you said: " + keyword)
+        return str(resp)
 
     return str(resp)
 
