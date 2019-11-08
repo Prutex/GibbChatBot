@@ -75,6 +75,7 @@ def sms_reply():
 
     if keyword == 'Schere' or keyword == 'Stein' or keyword == 'Papier':
         moves = ['Schere', 'Stein', 'Papier']
+        time.sleep(5)
         move = moves[random.randrange(0, 2)]
         resp.message(move)
 
