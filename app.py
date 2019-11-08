@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.2.0.1'
+version = 'Version 0.1.2.1'
 
 
 @app.route("/")
