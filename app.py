@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.2.1'
+version = 'Version 0.1.2.2'
 
 
 @app.route("/")
@@ -130,9 +130,11 @@ def sms_reply():
         23.09.2019 - 12.10.2019 Herbstferien (gibb)
         Winterferien 23.12.2019 - 04.01.2020
         ''')
+        return str(resp)
     if keyword == 'Roll':
         resp.message(str(random.randrange(0, 100)))
         return str(resp)
+
     if keyword == 'Version':
         resp.message(version)
         return str(resp)
@@ -141,7 +143,6 @@ def sms_reply():
         resp.message("I don't know this Command, you said: " + keyword)
         return str(resp)
 
-    return str(resp)
 
 
 if __name__ == "__main__":
