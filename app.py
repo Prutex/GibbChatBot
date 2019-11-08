@@ -36,6 +36,7 @@ def sms_reply():
         Ferien
         Can Now play Rock, Papers, Scissors(Type your move: "Stein" or "Papier" or "Schere"  
         ''')
+        return str(resp)
 
     if keyword == 'Stundenplan':
 
