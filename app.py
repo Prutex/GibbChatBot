@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.2.2'
+version = 'Version 0.1.2.3'
 
 
 @app.route("/")
@@ -82,30 +82,37 @@ def sms_reply():
         if keyword == move:
             time.sleep(2)
             resp.message("it's a draw")
+            time.sleep(2)
             return str(resp)
         elif keyword == 'Schere' and move == "Papier":
             time.sleep(2)
             resp.message("You Won!")
+            time.sleep(2)
             return str(resp)
         elif keyword == 'Schere' and move == "Stein":
             time.sleep(2)
             resp.message('Suck it, I Won!')
+            time.sleep(2)
             return str(resp)
         elif keyword == 'Stein' and move == 'Papier':
             time.sleep(2)
             resp.message('Suck it, I won!')
+            time.sleep(2)
             return str(resp)
         elif keyword == 'Stein' and move == 'Schere':
             time.sleep(2)
             resp.message('You Won!')
+            time.sleep(2)
             return str(resp)
         elif keyword == 'Papier' and move == 'Schere':
             time.sleep(2)
             resp.message('Suck it, I won!')
+            time.sleep(2)
             return str(resp)
         elif keyword == 'Papier' and move == 'Stein':
             time.sleep(2)
             resp.message('You won!')
+            time.sleep(2)
             return str(resp)
 
     if keyword == 'lb':
