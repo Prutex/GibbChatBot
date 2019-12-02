@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.2.3'
+version = 'Version 0.1.2.4'
 
 
 @app.route("/")
@@ -48,23 +48,23 @@ def sms_reply():
 
         if xtime[0] == 'Tue':
             if int(etime[0]) < 10:
-                resp.message('08:45 - 09:30 Englisch(947) – Reist Daniela')
+                resp.message('08:45 - 09:30 Englisch(947) – Reist Daniela - 106')
             elif int(etime[0]) < 12:
-                resp.message('10:00 - 11:30 Wirtschaft und Recht(915) – Pieren Benno')
+                resp.message('10:00 - 11:30 Wirtschaft und Recht(915) – Pieren Benno - 307')
             elif int(etime[0]) < 15:
-                resp.message('13:30 - 15:00 Naturwiss. Grundlagen(926) – Nydegger Martin')
+                resp.message('13:30 - 15:00 Naturwiss. Grundlagen(926) – Nydegger Martin - U03')
             elif int(etime[0]) < 17:
-                resp.message('15:30 - 17:00 ABU – Gerber Simone')
+                resp.message('15:30 - 17:00 ABU – Gerber Simone - 215')
 
         elif xtime[0] == 'Wed':
             if int(etime[0]) < 10:
-                resp.message(' 08:00 - 09:30 Hardware(157) – Jäggi Thomas')
+                resp.message(' 08:00 - 09:30 Hardware(157) – Jäggi Thomas - 303')
             elif int(etime[0]) < 12:
-                resp.message('10:00 - 11:30 Internetanbindung(146) – Kratzer Michael')
+                resp.message('10:00 - 11:30 Internetanbindung(146) – Kratzer Michael - 146')
             elif int(etime[0]) < 14:
-                resp.message('12:30 - 14:00 IT-Kleinprojekt(306) – Yilmaz Günel')
+                resp.message('12:30 - 14:00 IT-Kleinprojekt(306) – Yilmaz Günel - 309')
             elif int(etime[0]) < 17:
-                resp.message('14:15 - 15:45 Teamverhalten(213) – Yilmaz Günel')
+                resp.message('14:15 - 15:45 Teamverhalten(213) – Yilmaz Günel - 209')
         else:
             resp.message('Heute hast du keine Schule weil heute ist:' + xtime[0])
         return str(resp)
