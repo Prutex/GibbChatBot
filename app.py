@@ -5,7 +5,8 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.2.5'
+version = 'Version 0.1.2.6'
+url = "https://chatgibbbot.azurewebsites.net/"
 
 
 @app.route("/")
@@ -30,7 +31,7 @@ def sms_reply():
     resp = MessagingResponse()
 
     if keyword == 'help':
-        resp.message(version + '' + '''
+        resp.message(version + url + '' + '''
         Stundenplan
         Dör
         lb
