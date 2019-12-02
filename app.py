@@ -5,7 +5,7 @@ import time
 import random
 
 app = Flask(__name__)
-version = 'Version 0.1.2.4'
+version = 'Version 0.1.2.5'
 
 
 @app.route("/")
@@ -66,7 +66,13 @@ def sms_reply():
             elif int(etime[0]) < 17:
                 resp.message('14:15 - 15:45 Teamverhalten(213) – Yilmaz Günel - 209')
         else:
-            resp.message('Heute hast du keine Schule weil heute ist:' + xtime[0])
+            if xtime[0] == "Mon":
+                today = "Montag"
+            elif xtime[0] == "Tue":
+                today = "Donnerstag"
+            elif xtime[0] == "Fri":
+                today = "Freitag"
+            resp.message('Heute hast du keine Schule weil heute ist:' + today)
         return str(resp)
 
     if keyword == 'Dör':
