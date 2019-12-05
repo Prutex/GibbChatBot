@@ -31,7 +31,7 @@ def sms_reply():
     resp = MessagingResponse()
 
     if keyword == 'help':
-        resp.message(version + url + '' + '''
+        resp.message(version, url + '' + '''
         Stundenplan
         Dör
         lb
@@ -157,7 +157,6 @@ def sms_reply():
     else:
         resp.message("I don't know this Command, you said: " + keyword)
         return str(resp)
-
 
 
 if __name__ == "__main__":
