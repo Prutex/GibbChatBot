@@ -31,7 +31,7 @@ def sms_reply():
     resp = MessagingResponse()
 
     if keyword == 'help':
-        resp.message(version, url + '' + '''
+        resp.message(version + '' + url + '' + '''
         Stundenplan
         Dör
         lb
