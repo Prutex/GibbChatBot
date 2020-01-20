@@ -124,26 +124,27 @@ def sms_reply():
 
     if keyword == 'lb':
         resp.message('''
-         ——————————DIENSTAG————————————
-         29.10 M947 Test w 100% (Unit 1)
-         22.10 WR Test 1 50%
-         10.12 WR Test 2 50%
-         12.11 M926 Test 2
-         17.12 M926 Test 3
-         ——————————MITTWOCH———————————
-         13.11 M157 LB2 50%
-         08-15.01 M157 LB3 35%
-         16.10 M146 LB1 40%
-         08.01 M146 LB2 60%
-         ——————————————————————————
+      ——————————DIENSTAG————————————
+    04.02 M947 Unit 3 - Network (Unit 3 - halb)
+    11.02 M915 Test 3 (FIBU / Budget - ganz)
+    10.03 M915 Test 4 (Kennzahlen - ganz)
+    02.06 M915 Test 5 (Rechtsformen - ganz)
+    18.02 M926 LB1 (ganz)
+    24.03 M926 LB2 (ganz)
+    16.06 M926 LB3 (ganz)
+    ——————————MITTWOCH———————————
+    08-15.01 M157 LB3 35%
+    15.01 M146 LB2 60%
+    ——————————————————————————
         ''')
         return str(resp)
 
     if keyword == 'Ferien':
         resp.message('''
         Ferien & freie Arbeitstage:
-        23.09.2019 - 12.10.2019 Herbstferien (gibb)
-        Winterferien 23.12.2019 - 04.01.2020
+        Frühling 2020	30.03.2020 - 18.04.2020 (KW14 - KW16)
+        Sommer 2020	29.06.2020 - 08.08.2020 (KW27 - KW32)
+        BMS: Teilabschluss- und Abschlussklassen ab 06.07.2020
         ''')
         return str(resp)
     if keyword == 'Roll':
